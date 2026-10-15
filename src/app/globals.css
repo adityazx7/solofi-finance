@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #FAFAF7;
+    --foreground: #0F172A;
+    --card: #FFFFFF;
+    --card-foreground: #0F172A;
+    --popover: #FFFFFF;
+    --popover-foreground: #0F172A;
+    --primary: #059669;
+    --primary-foreground: #FFFFFF;
+    --secondary: #F3F3EE;
+    --secondary-foreground: #1E293B;
+    --muted: #EDEDE6;
+    --muted-foreground: #64748B;
+    --accent: #F3F3EE;
+    --accent-foreground: #1E293B;
+    --destructive: #E11D48;
+    --destructive-foreground: #FFFFFF;
+    --border: #E4E4DC;
+    --input: #E4E4DC;
+    --ring: #059669;
+    --radius: 0.875rem;
+
+    /* SoloFi Specific Semantic Tokens */
+    --vault-gold: #D97706;
+    --vault-gold-light: #FEF3C7;
+    --vault-gold-border: #FCD34D;
+    --surface-elevated: #F8F8F4;
+    --hairline: rgba(15, 23, 42, 0.08);
+    --income-green: #059669;
+    --expense-ink: #334155;
+  }
+
+  .dark {
+    --background: #0B0D10;
+    --foreground: #F8FAFC;
+    --card: #12151B;
+    --card-foreground: #F8FAFC;
+    --popover: #12151B;
+    --popover-foreground: #F8FAFC;
+    --primary: #10B981;
+    --primary-foreground: #042F24;
+    --secondary: #181D25;
+    --secondary-foreground: #F8FAFC;
+    --muted: #181D25;
+    --muted-foreground: #94A3B8;
+    --accent: #181D25;
+    --accent-foreground: #F8FAFC;
+    --destructive: #F43F5E;
+    --destructive-foreground: #FFFFFF;
+    --border: #222834;
+    --input: #222834;
+    --ring: #10B981;
+
+    /* SoloFi Specific Semantic Tokens Dark */
+    --vault-gold: #F59E0B;
+    --vault-gold-light: rgba(245, 158, 11, 0.12);
+    --vault-gold-border: rgba(245, 158, 11, 0.28);
+    --surface-elevated: #161B24;
+    --hairline: rgba(255, 255, 255, 0.08);
+    --income-green: #10B981;
+    --expense-ink: #94A3B8;
+  }
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tabular numerals for all financial and metric displays */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Glassmorphism utility for floating chrome only */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dark .glass-panel {
+  background: rgba(18, 21, 27, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
