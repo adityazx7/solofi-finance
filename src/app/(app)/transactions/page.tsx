@@ -323,8 +323,21 @@ export default function TransactionsLedgerPage() {
               ) : filteredTransactions.length === 0 ? (
                 <tr>
                   <td colSpan={7} className="py-12 text-center text-xs text-[var(--muted-foreground)]">
-                    <CheckCircle2 className="w-6 h-6 text-[var(--primary)] mx-auto mb-2" />
-                    <span>Review Inbox Zero! All transactions categorized.</span>
+                    <div className="flex flex-col items-center justify-center space-y-3">
+                      <img
+                        src={activeTab === 'review' ? '/assets/illustrations/success-checkmark-illustration.png' : '/assets/illustrations/empty-state-ledger-illustration.png'}
+                        alt="Ledger empty state"
+                        className="w-24 h-24 object-contain drop-shadow-sm opacity-90"
+                      />
+                      <span className="font-semibold text-foreground text-sm">
+                        {activeTab === 'review' ? 'Review Inbox Zero!' : 'No Transactions Found'}
+                      </span>
+                      <span className="max-w-sm text-xs text-muted-foreground">
+                        {activeTab === 'review'
+                          ? 'All double-entry items have been reviewed, verified and categorized.'
+                          : 'Try modifying your search filter or post a simulated transaction.'}
+                      </span>
+                    </div>
                   </td>
                 </tr>
               ) : (

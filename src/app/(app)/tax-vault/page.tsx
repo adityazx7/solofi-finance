@@ -305,13 +305,22 @@ export default function TaxVaultHubPage() {
       <Dialog open={unlockModalOpen} onOpenChange={setUnlockModalOpen}>
         <DialogContent className="max-w-md bg-[var(--card)] border border-[var(--border)]">
           <DialogHeader className="text-left">
-            <div className="w-10 h-10 rounded-full bg-rose-500/10 text-rose-500 flex items-center justify-center mb-2">
-              <AlertTriangle className="w-5 h-5" />
+            <div className="flex items-center gap-3 mb-2">
+              <img
+                src="/assets/3d-icons/3d-lock-key-icon.png"
+                alt="Locked Vault"
+                className="w-12 h-12 object-contain drop-shadow"
+              />
+              <div>
+                <DialogTitle className="text-lg font-bold text-[var(--foreground)]">
+                  Unlock Tax Vault?
+                </DialogTitle>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-rose-500 font-semibold">
+                  Safe Harbor Warning
+                </span>
+              </div>
             </div>
-            <DialogTitle className="text-lg font-bold text-[var(--foreground)]">
-              Unlock Tax Vault?
-            </DialogTitle>
-            <DialogDescription className="text-xs text-[var(--muted-foreground)] space-y-2 pt-2">
+            <DialogDescription className="text-xs text-[var(--muted-foreground)] space-y-2 pt-1">
               <p>
                 Your Tax Vault is locked to prevent accidental spending of tax liabilities. Withdrawing funds will leave you vulnerable to an unexpected Q2 tax bill and IRS / CBDT underpayment interest.
               </p>
@@ -349,12 +358,21 @@ export default function TaxVaultHubPage() {
       <Dialog open={payTaxModalOpen} onOpenChange={setPayTaxModalOpen}>
         <DialogContent className="max-w-md bg-[var(--card)] border border-[var(--border)]">
           <DialogHeader className="text-left">
-            <div className="w-10 h-10 rounded-full bg-[var(--primary-subtle)] text-[var(--primary)] flex items-center justify-center mb-2">
-              <ShieldCheck className="w-5 h-5" />
+            <div className="flex items-center gap-3 mb-2">
+              <img
+                src="/assets/3d-safe-vault-icon-with-money-illustration-png.webp"
+                alt="Tax Vault"
+                className="w-12 h-12 object-contain drop-shadow"
+              />
+              <div>
+                <DialogTitle className="text-lg font-bold text-[var(--foreground)]">
+                  Submit Q2 Estimated Tax Payment
+                </DialogTitle>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-semibold">
+                  Direct Government Remittance
+                </span>
+              </div>
             </div>
-            <DialogTitle className="text-lg font-bold text-[var(--foreground)]">
-              Submit Q2 Estimated Tax Payment
-            </DialogTitle>
             <DialogDescription className="text-xs text-[var(--muted-foreground)] pt-1">
               Transfer funds directly from your locked Tax Vault to the revenue department via simulated EFTPS.
             </DialogDescription>

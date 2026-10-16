@@ -249,18 +249,24 @@ export default function PublicPayPortalPage() {
 
         {/* Payment Checkout Card or Paid Confirmation */}
         {isPaid ? (
-          <Card className="border-emerald-500/40 bg-emerald-500/5 p-6 text-center space-y-3">
-            <div className="w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto">
-              <CheckCircle2 className="w-6 h-6" />
+          <Card className="border-emerald-500/40 bg-emerald-500/5 p-8 text-center space-y-4">
+            <div className="mx-auto w-24 h-24 flex items-center justify-center">
+              <img
+                src="/assets/illustrations/success-checkmark-illustration.png"
+                alt="Payment Succeeded"
+                className="w-full h-full object-contain drop-shadow"
+              />
             </div>
-            <h3 className="text-lg font-bold text-[var(--foreground)]">Payment Received with Thanks</h3>
-            <p className="text-xs text-[var(--muted-foreground)] max-w-md mx-auto">
-              This invoice has been cleared. A copy of the receipt has been dispatched to {invoice.clientEmail}.
-            </p>
+            <div>
+              <h3 className="text-xl font-bold text-[var(--foreground)]">Payment Received with Thanks</h3>
+              <p className="text-xs text-[var(--muted-foreground)] max-w-md mx-auto mt-1">
+                This invoice has been cleared. Safe harbor taxes have been automatically withheld and vaulted into {invoice.businessLegalName}'s tax reserve.
+              </p>
+            </div>
             <div className="pt-2 flex items-center justify-center gap-3">
               <Button variant="outline" size="sm" onClick={() => window.print()} className="text-xs gap-1.5">
                 <Printer className="w-3.5 h-3.5" />
-                <span>Print Receipt</span>
+                <span>Print Official Receipt</span>
               </Button>
             </div>
           </Card>
@@ -271,9 +277,13 @@ export default function PublicPayPortalPage() {
                 <CreditCard className="w-4 h-4 text-[var(--primary)]" />
                 <span className="font-semibold text-sm">Select Payment Method</span>
               </div>
-              <div className="flex items-center gap-1.5 text-[11px] text-[var(--muted-foreground)]">
-                <ShieldCheck className="w-3.5 h-3.5 text-[var(--primary)]" />
-                <span>256-bit Encrypted Checkout</span>
+              <div className="flex items-center gap-2 text-[11px] text-[var(--muted-foreground)]">
+                <img
+                  src="/assets/badges/encryption-256bit-badge.svg"
+                  alt="256-bit"
+                  className="h-5 w-auto"
+                />
+                <span>256-bit Encrypted</span>
               </div>
             </div>
 

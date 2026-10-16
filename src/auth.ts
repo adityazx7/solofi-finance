@@ -10,7 +10,7 @@ export const DEMO_PERSONAS = [
     businessName: 'Vance Studio Design LLC',
     currency: 'USD',
     country: 'US',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150',
+    avatar: '/assets/designer headshot.jpg',
     description: 'US Solopreneur • Single LLC • $140k/yr • 28% Withholding',
   },
   {
@@ -21,7 +21,7 @@ export const DEMO_PERSONAS = [
     businessName: 'Mehta Systems Tech Services',
     currency: 'INR',
     country: 'IN',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150',
+    avatar: '/assets/depositphotos_74390343-Smiling-software-developer.jpg',
     description: 'India Contractor • Sec 44ADA • ₹60L/yr • 15% Withholding',
   },
   {
@@ -32,7 +32,7 @@ export const DEMO_PERSONAS = [
     businessName: 'Chloe Lin Media LLC',
     currency: 'USD',
     country: 'US',
-    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150',
+    avatar: '/assets/female enterprenur.jpg',
     description: 'US Creator • Multi-Stream Income • $95k/yr • 25% Withholding',
   },
   {
@@ -43,7 +43,7 @@ export const DEMO_PERSONAS = [
     businessName: 'Pioneer Labs Inc',
     currency: 'USD',
     country: 'US',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150',
+    avatar: '/assets/consultant headshot.jpg',
     description: 'US Micro-Startup • 2-Person S-Corp • $260k/yr • 32% Withholding',
   },
 ];

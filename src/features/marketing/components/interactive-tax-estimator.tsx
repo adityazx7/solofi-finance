@@ -219,8 +219,11 @@ export function InteractiveTaxEstimator() {
         </div>
 
         {/* Calculated Output Card */}
-        <div className="lg:col-span-5 rounded-2xl border border-amber-500/30 bg-radial from-amber-500/10 via-transparent to-transparent p-6 space-y-6">
-          <div className="space-y-1">
+        <div className="lg:col-span-5 rounded-2xl border border-amber-500/30 bg-radial from-amber-500/10 via-transparent to-transparent p-6 space-y-6 relative overflow-hidden">
+          <div className="absolute right-3 top-3 opacity-30 dark:opacity-15 pointer-events-none">
+            <img src="/assets/3d-icons/3d-calculator-icon.png" alt="Calculator 3D" className="w-20 h-20 object-contain" />
+          </div>
+          <div className="space-y-1 relative z-10">
             <span className="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-400">
               SoloFi Recommendation
             </span>

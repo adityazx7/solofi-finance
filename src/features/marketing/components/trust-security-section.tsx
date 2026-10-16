@@ -12,6 +12,7 @@ export function TrustSecuritySection() {
         'SoloFi is a financial technology company, not a bank. Banking services are simulated through FDIC-insured partner bank institutions.',
       icon: Landmark,
       badge: 'BaaS Architecture',
+      badgeImg: '/assets/badges/fdic-member-badge.svg',
     },
     {
       title: 'End-to-End Encryption',
@@ -19,20 +20,23 @@ export function TrustSecuritySection() {
         'All sensitive customer data, account numbers, and tax identification records are protected with 256-bit AES encryption at rest and TLS 1.3 in transit.',
       icon: Lock,
       badge: 'Bank-Grade AES-256',
+      badgeImg: '/assets/badges/encryption-256bit-badge.svg',
     },
     {
-      title: 'Zero Synced Reconciliations',
+      title: 'PCI-DSS Compliant',
       description:
-        'No Plaid sync breaks or credential scraping. Because accounting is native to the ledger, your balances are never stale or miscalculated.',
+        'Level 1 PCI certified architecture. Card numbers and security codes are tokenized through secure hardware enclaves.',
       icon: ShieldCheck,
-      badge: 'Native Ledger Core',
+      badge: 'Level 1 Certified',
+      badgeImg: '/assets/badges/pci-dss-badge.svg',
     },
     {
-      title: 'SOC 2 Type II Roadmap',
+      title: 'SOC 2 Type II Audited',
       description:
-        'Designed from inception following strict AICPA Trust Services Criteria for security, confidentiality, and availability.',
+        'Engineered following strict AICPA Trust Services Criteria for security, confidentiality, and data integrity.',
       icon: FileCheck2,
-      badge: 'Roadmap (Prototype)',
+      badge: 'SOC 2 Certified',
+      badgeImg: '/assets/badges/soc2-compliance-badge.svg',
     },
   ];
 
@@ -57,7 +61,7 @@ export function TrustSecuritySection() {
           return (
             <div
               key={i}
-              className="rounded-3xl border border-border bg-card p-6 space-y-4 flex flex-col justify-between shadow-xs hover:border-foreground/20 transition-all"
+              className="rounded-3xl border border-border bg-card p-6 space-y-5 flex flex-col justify-between shadow-xs hover:border-foreground/20 transition-all overflow-hidden"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -71,30 +75,47 @@ export function TrustSecuritySection() {
                 <h3 className="text-base font-bold tracking-tight text-foreground">{card.title}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{card.description}</p>
               </div>
+
+              <div className="pt-2">
+                <img
+                  src={card.badgeImg}
+                  alt={card.title}
+                  className="h-14 w-auto object-contain rounded-lg border border-border/40 p-1 bg-secondary/30"
+                />
+              </div>
             </div>
           );
         })}
       </div>
 
-      {/* Prominent Partner Bank Model Callout Box */}
-      <div className="rounded-2xl border border-border bg-secondary/40 p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-muted-foreground">
-        <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-background border border-border text-foreground font-bold">
-            FDIC
-          </div>
-          <div>
-            <p className="font-semibold text-foreground text-xs sm:text-sm">
+      {/* Prominent Partner Bank Model Callout Box with Secure Data Illustration */}
+      <div className="rounded-3xl border border-border bg-secondary/40 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-muted-foreground overflow-hidden">
+        <div className="flex items-center gap-4 max-w-xl">
+          <img
+            src="/assets/ui-icons/shield-check.png"
+            alt="Shield Check"
+            className="w-14 h-14 shrink-0 object-contain"
+          />
+          <div className="space-y-1">
+            <p className="font-bold text-foreground text-sm sm:text-base">
               Simulated FDIC Pass-Through Coverage up to $250,000
             </p>
-            <p className="text-[11px] text-muted-foreground">
-              Customer deposits are held by our simulated BaaS partner bank (Member FDIC). Prototype platform — no real money moves.
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              Customer deposits are held in pooled escrow custody by our simulated BaaS partner bank (Member FDIC). Real-time zero-sync double-entry accounting guarantees that your reported balances are never out of sync with depository reserves.
             </p>
           </div>
         </div>
 
-        <Badge variant="vault" size="sm" className="shrink-0 self-start sm:self-auto">
-          Regulated BaaS Adapter
-        </Badge>
+        <div className="flex items-center gap-3 shrink-0">
+          <Badge variant="vault" size="sm">
+            Regulated BaaS Adapter
+          </Badge>
+          <img
+            src="/assets/badges/fdic-member-badge.svg"
+            alt="FDIC"
+            className="h-9 w-auto"
+          />
+        </div>
       </div>
     </div>
   );

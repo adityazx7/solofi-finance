@@ -157,8 +157,13 @@ export default function DashboardOverviewPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Safe-to-Spend Hero Card */}
         <Card className="border-[var(--primary)]/40 bg-[var(--card)] relative overflow-hidden shadow-sm">
-          <div className="absolute top-0 right-0 w-24 h-24 bg-[var(--primary)]/5 rounded-full blur-xl pointer-events-none" />
-          <CardHeader className="pb-1">
+          <img
+            src="/assets/3d-icons/3d-wallet-icon.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute -right-4 -bottom-4 w-28 h-28 opacity-10 dark:opacity-15 pointer-events-none object-contain select-none"
+          />
+          <CardHeader className="pb-1 relative z-10">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold text-[var(--primary)] flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5" /> Safe-to-Spend
@@ -171,7 +176,7 @@ export default function DashboardOverviewPage() {
               Spend freely with zero tax liability fear.
             </CardDescription>
           </CardHeader>
-          <CardContent className="pt-2">
+          <CardContent className="pt-2 relative z-10">
             <MoneyText
               cents={operatingBalanceCents}
               currency={currency}
@@ -187,7 +192,13 @@ export default function DashboardOverviewPage() {
 
         {/* Locked Tax Vault Card */}
         <Card className="border-[var(--vault-accent)]/40 bg-[var(--card)] relative overflow-hidden shadow-sm">
-          <CardHeader className="pb-1">
+          <img
+            src="/assets/3d-safe-vault-icon-with-money-illustration-png.webp"
+            alt=""
+            aria-hidden="true"
+            className="absolute -right-4 -bottom-4 w-28 h-28 opacity-10 dark:opacity-15 pointer-events-none object-contain select-none"
+          />
+          <CardHeader className="pb-1 relative z-10">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold text-[var(--vault-accent)] flex items-center gap-1.5">
                 <Lock className="w-3.5 h-3.5" /> Locked Tax Vault
@@ -200,7 +211,7 @@ export default function DashboardOverviewPage() {
               Auto-split from paid invoices. Locked for IRS / ITD.
             </CardDescription>
           </CardHeader>
-          <CardContent className="pt-2">
+          <CardContent className="pt-2 relative z-10">
             <MoneyText
               cents={taxVaultBalanceCents}
               currency={currency}
@@ -216,19 +227,27 @@ export default function DashboardOverviewPage() {
         </Card>
 
         {/* Total Ledger Assets Card */}
-        <Card className="border-[var(--border)] bg-[var(--card)] shadow-sm">
-          <CardHeader className="pb-1">
+        <Card className="border-[var(--border)] bg-[var(--card)] relative overflow-hidden shadow-sm">
+          <img
+            src="/assets/3d-icons/3d-chart-growth-icon.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute -right-4 -bottom-4 w-28 h-28 opacity-10 dark:opacity-15 pointer-events-none object-contain select-none"
+          />
+          <CardHeader className="pb-1 relative z-10">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold text-[var(--muted-foreground)]">Total Depository Assets</span>
+              <span className="text-xs font-semibold text-[var(--foreground)] flex items-center gap-1.5">
+                <TrendingUp className="w-3.5 h-3.5 text-blue-500" /> Total Balance
+              </span>
               <Badge variant="outline" className="text-[10px] font-mono">
                 Combined
               </Badge>
             </div>
             <CardDescription className="text-[11px]">
-              All partner bank accounts under your business entity.
+              Operating checking + isolated tax reserves.
             </CardDescription>
           </CardHeader>
-          <CardContent className="pt-2">
+          <CardContent className="pt-2 relative z-10">
             <MoneyText
               cents={totalBalanceCents}
               currency={currency}

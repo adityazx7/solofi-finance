@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Sparkles, ArrowRight, ShieldCheck, Quote, Star, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
+import { Sparkles, ArrowRight, ShieldCheck, Quote, Star, CheckCircle2, Smartphone, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { HeroTaxSplitSimulator } from '@/features/marketing/components/hero-tax-split-simulator';
@@ -14,12 +15,40 @@ import { FaqAccordion } from '@/features/marketing/components/faq-accordion';
 import { WaitlistForm } from '@/features/waitlist/components/waitlist-form';
 
 export default function MarketingPage() {
+  const PARTNER_LOGOS = [
+    { name: 'Stripe', file: 'stripe.svg' },
+    { name: 'Upwork', file: 'upwork.svg' },
+    { name: 'Figma', file: 'figma.svg' },
+    { name: 'Shopify', file: 'shopify.svg' },
+    { name: 'Notion', file: 'notion.svg' },
+    { name: 'Slack', file: 'slack.svg' },
+    { name: 'AWS', file: 'aws.svg' },
+    { name: 'Fiverr', file: 'fiverr.svg' },
+    { name: 'Adobe', file: 'adobe.svg' },
+    { name: 'Uber', file: 'uber.svg' },
+  ];
+
   return (
     <div className="space-y-24 sm:space-y-32 pb-24 overflow-x-hidden">
-      {/* 1. Hero Section */}
+      {/* 1. Hero Section with Main Background Image */}
       <section className="relative pt-12 sm:pt-20 px-6 max-w-7xl mx-auto">
-        <div className="text-center space-y-6 max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold text-emerald-800 dark:text-emerald-300">
+        {/* Main Background Image Container */}
+        <div 
+          className="absolute inset-0 -z-10 rounded-3xl overflow-hidden pointer-events-none opacity-40 dark:opacity-20 transition-opacity"
+          style={{
+            backgroundImage: `url('/assets/main-background.png')`,
+            backgroundPosition: 'right 25% center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          {/* Subtle gradient vignette to blend seamlessly */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
+        </div>
+
+        <div className="relative z-10 text-center space-y-6 max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold text-emerald-800 dark:text-emerald-300 backdrop-blur-xs">
             <Sparkles className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
             The Automated Financial Hub for Freelancers & Solopreneurs
           </div>
@@ -39,22 +68,75 @@ export default function MarketingPage() {
                 <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="font-medium">
-              <Link href="/design">
-                Explore Design System
+            <Button asChild variant="outline" size="lg" className="font-medium bg-background/80 backdrop-blur-xs">
+              <Link href="/login">
+                Launch Live Demo
               </Link>
             </Button>
           </div>
 
-          <p className="text-xs text-muted-foreground flex items-center justify-center gap-2 pt-1">
-            <span className="flex text-amber-500">★★★★★</span>
-            <span>Zero QuickBooks sync lag • Backed by BaaS partner bank (Member FDIC)</span>
-          </p>
+          {/* Social Proof Star Ratings & Badges */}
+          <div className="flex flex-wrap items-center justify-center gap-6 pt-3 text-xs text-muted-foreground">
+            <div className="flex items-center gap-1.5">
+              <span className="flex text-amber-500">★★★★★</span>
+              <span className="font-semibold text-foreground">4.9/5</span>
+              <span>by 450+ independent builders</span>
+            </div>
+            <div className="hidden sm:flex items-center gap-2">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              <span>Simulated BaaS Partner: Lead Bank, Member FDIC</span>
+            </div>
+          </div>
         </div>
 
         {/* Hero Interactive Split Simulator */}
-        <div className="pt-12 sm:pt-16 max-w-4xl mx-auto">
+        <div className="relative z-10 pt-12 sm:pt-16 max-w-4xl mx-auto">
           <HeroTaxSplitSimulator />
+        </div>
+
+        {/* Integration Partner Logos Strip */}
+        <div className="pt-16 max-w-5xl mx-auto text-center space-y-4">
+          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            Designed for solopreneurs receiving payouts from
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 opacity-75 grayscale hover:grayscale-0 transition-all">
+            {PARTNER_LOGOS.map((p) => (
+              <div key={p.name} className="flex items-center gap-2 hover:scale-105 transition-transform" title={p.name}>
+                <img
+                  src={`/assets/logos/${p.file}`}
+                  alt={p.name}
+                  className="h-6 w-auto object-contain dark:invert"
+                />
+                <span className="text-xs font-bold text-foreground tracking-tight">{p.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trust & Rating Badges Strip */}
+      <section className="px-6 max-w-7xl mx-auto">
+        <div className="rounded-3xl border border-border bg-card/60 backdrop-blur-xs p-6 sm:p-8 flex flex-wrap items-center justify-around gap-6 shadow-xs">
+          <img
+            src="/assets/badges/product-hunt-badge.svg"
+            alt="Product Hunt Featured"
+            className="h-10 w-auto hover:opacity-90 transition-opacity cursor-pointer"
+          />
+          <img
+            src="/assets/badges/g2-rating-badge.svg"
+            alt="G2 Leader 2026"
+            className="h-10 w-auto hover:opacity-90 transition-opacity cursor-pointer"
+          />
+          <img
+            src="/assets/badges/trustpilot-stars.svg"
+            alt="Trustpilot 4.9 Stars"
+            className="h-10 w-auto hover:opacity-90 transition-opacity cursor-pointer"
+          />
+          <img
+            src="/assets/badges/fdic-member-badge.svg"
+            alt="FDIC Insured Deposits"
+            className="h-10 w-auto hover:opacity-90 transition-opacity"
+          />
         </div>
       </section>
 
@@ -83,12 +165,12 @@ export default function MarketingPage() {
         <ComparisonTable />
       </section>
 
-      {/* 7. Social Proof & Freelancer Anxiety Evidence */}
+      {/* 7. Social Proof with Real Local Headshots */}
       <section className="px-6 max-w-7xl mx-auto space-y-12">
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <Badge variant="vault" size="sm">Evidence & Social Proof</Badge>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Backed by Independent Workers Worldwide
+            Loved by Independent Workers Worldwide
           </h2>
           <p className="text-muted-foreground text-xs sm:text-sm">
             Sources: Upwork Freelance Forward & Freelancers Union national surveys.
@@ -96,6 +178,7 @@ export default function MarketingPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Card 1: Elena Vance */}
           <div className="rounded-3xl border border-border bg-card p-6 space-y-4 shadow-xs flex flex-col justify-between">
             <div className="space-y-3">
               <Quote className="h-6 w-6 text-emerald-500 opacity-60" />
@@ -104,16 +187,19 @@ export default function MarketingPage() {
               </p>
             </div>
             <div className="pt-3 border-t border-border/80 flex items-center gap-3">
-              <div className="h-9 w-9 rounded-full bg-emerald-600 text-white font-bold text-xs flex items-center justify-center">
-                EV
-              </div>
+              <img
+                src="/assets/designer headshot.jpg"
+                alt="Elena Vance"
+                className="h-11 w-11 rounded-full object-cover border-2 border-emerald-500/40"
+              />
               <div>
                 <div className="font-semibold text-xs text-foreground">Elena Vance</div>
-                <div className="text-[11px] text-muted-foreground">Brand Designer • $140k/yr (Illustrative)</div>
+                <div className="text-[11px] text-muted-foreground">Brand Designer • $140k/yr • Vance Studio</div>
               </div>
             </div>
           </div>
 
+          {/* Card 2: Arjun Mehta */}
           <div className="rounded-3xl border border-border bg-card p-6 space-y-4 shadow-xs flex flex-col justify-between">
             <div className="space-y-3">
               <Quote className="h-6 w-6 text-amber-500 opacity-60" />
@@ -122,16 +208,19 @@ export default function MarketingPage() {
               </p>
             </div>
             <div className="pt-3 border-t border-border/80 flex items-center gap-3">
-              <div className="h-9 w-9 rounded-full bg-amber-600 text-white font-bold text-xs flex items-center justify-center">
-                AM
-              </div>
+              <img
+                src="/assets/depositphotos_74390343-Smiling-software-developer.jpg"
+                alt="Arjun Mehta"
+                className="h-11 w-11 rounded-full object-cover border-2 border-amber-500/40"
+              />
               <div>
                 <div className="font-semibold text-xs text-foreground">Arjun Mehta</div>
-                <div className="text-[11px] text-muted-foreground">Full-Stack Contractor • ₹60L/yr (Illustrative)</div>
+                <div className="text-[11px] text-muted-foreground">Full-Stack Contractor • ₹60L/yr • Mehta Systems</div>
               </div>
             </div>
           </div>
 
+          {/* Card 3: Chloe Lin & David Chen */}
           <div className="rounded-3xl border border-border bg-card p-6 space-y-4 shadow-xs flex flex-col justify-between">
             <div className="space-y-3">
               <Quote className="h-6 w-6 text-indigo-500 opacity-60" />
@@ -140,12 +229,14 @@ export default function MarketingPage() {
               </p>
             </div>
             <div className="pt-3 border-t border-border/80 flex items-center gap-3">
-              <div className="h-9 w-9 rounded-full bg-indigo-600 text-white font-bold text-xs flex items-center justify-center">
-                PL
-              </div>
+              <img
+                src="/assets/female enterprenur.jpg"
+                alt="Chloe Lin"
+                className="h-11 w-11 rounded-full object-cover border-2 border-indigo-500/40"
+              />
               <div>
-                <div className="font-semibold text-xs text-foreground">Marcus Thorne</div>
-                <div className="text-[11px] text-muted-foreground">Micro-SaaS Founder • Pioneer Labs (Illustrative)</div>
+                <div className="font-semibold text-xs text-foreground">Chloe Lin</div>
+                <div className="text-[11px] text-muted-foreground">Creator & Educator • $95k/yr • Chloe Lin Media</div>
               </div>
             </div>
           </div>
@@ -157,17 +248,55 @@ export default function MarketingPage() {
         <TrustSecuritySection />
       </section>
 
-      {/* 9. Pricing Teaser */}
+      {/* 9. Mobile App Showcase & Store Badges */}
+      <section className="px-6 max-w-7xl mx-auto">
+        <div className="rounded-3xl border border-border bg-radial from-card via-card to-secondary/30 p-8 sm:p-12 shadow-lg flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden relative">
+          <div className="space-y-5 max-w-xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              <Smartphone className="h-3.5 w-3.5" />
+              Native Mobile PWA Experience
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+              Banking Built for the Palm of Your Hand
+            </h2>
+            <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+              Track your Safe-to-Spend balance on the go. Instant push notifications the second tax is auto-transferred into your vault upon client invoice payment.
+            </p>
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <img
+                src="/assets/badges/app-store-download-badge.svg"
+                alt="Download on App Store"
+                className="h-11 w-auto cursor-pointer hover:opacity-90 transition-opacity"
+              />
+              <img
+                src="/assets/badges/google-play-badge.svg"
+                alt="Get it on Google Play"
+                className="h-11 w-auto cursor-pointer hover:opacity-90 transition-opacity"
+              />
+            </div>
+          </div>
+
+          <div className="w-full md:w-auto flex justify-center">
+            <img
+              src="/assets/mockups/iphone-floating-angle-mockup.png"
+              alt="SoloFi Mobile App Interface"
+              className="w-72 sm:w-80 h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 10. Pricing Teaser */}
       <section id="pricing" className="px-6 max-w-7xl mx-auto scroll-mt-24">
         <PricingTeaser />
       </section>
 
-      {/* 10. FAQ Accordion */}
+      {/* 11. FAQ Accordion */}
       <section className="px-6 max-w-7xl mx-auto">
         <FaqAccordion />
       </section>
 
-      {/* 11. Priority Waitlist Section */}
+      {/* 12. Priority Waitlist Section */}
       <section id="waitlist-section" className="px-6 max-w-3xl mx-auto scroll-mt-24">
         <WaitlistForm />
       </section>

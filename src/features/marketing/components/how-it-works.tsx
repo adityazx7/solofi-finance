@@ -14,6 +14,7 @@ export function HowItWorks() {
         'Issue clean invoices or provide your SoloFi routing and account numbers to clients, Stripe, or payroll platforms.',
       badge: 'Step 1: Inflow',
       icon: DollarSign,
+      image: '/assets/illustrations/online-payment-illustration.png',
       visual: (
         <div className="rounded-2xl border border-border bg-card p-4 space-y-2 text-left">
           <div className="flex justify-between items-center text-xs">
@@ -32,6 +33,7 @@ export function HowItWorks() {
         'The pure tax engine calculates your exact bracket in milliseconds and auto-moves the tax amount into your dedicated Tax Vault.',
       badge: 'Step 2: Auto-Withhold',
       icon: Lock,
+      image: '/assets/illustrations/savings-illustration.png',
       visual: (
         <div className="rounded-2xl border border-amber-500/30 bg-radial from-amber-500/10 via-transparent to-transparent p-4 space-y-2 text-left">
           <div className="flex justify-between items-center text-xs">
@@ -55,6 +57,7 @@ export function HowItWorks() {
         'Your Safe-to-Spend balance is 100% guilt-free. Pay for business tools, pay your own salary, or allocate to savings goals without touching tax money.',
       badge: 'Step 3: Peace of Mind',
       icon: Wallet,
+      image: '/assets/illustrations/freelancer-illustration.png',
       visual: (
         <div className="rounded-2xl border border-emerald-500/30 bg-card p-4 space-y-2 text-left">
           <div className="flex justify-between items-center text-xs">
@@ -89,7 +92,7 @@ export function HowItWorks() {
           return (
             <div
               key={step.number}
-              className="rounded-3xl border border-border bg-card p-6 sm:p-8 space-y-6 flex flex-col justify-between shadow-xs hover:border-foreground/20 transition-all"
+              className="rounded-3xl border border-border bg-card p-6 sm:p-8 space-y-6 flex flex-col justify-between shadow-xs hover:border-foreground/20 transition-all overflow-hidden relative"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -101,20 +104,23 @@ export function HowItWorks() {
                   </Badge>
                 </div>
 
-                <div className="space-y-1.5">
-                  <h3 className="text-xl font-bold tracking-tight text-foreground flex items-center gap-2">
-                    <Icon className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                    {step.title}
-                  </h3>
+                <div className="h-36 rounded-2xl overflow-hidden border border-border/60 bg-secondary/30 relative">
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-full h-full object-contain p-2 hover:scale-105 transition-transform"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold tracking-tight text-foreground">{step.title}</h3>
                   <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-border/80">
-                {step.visual}
-              </div>
+              {step.visual}
             </div>
           );
         })}

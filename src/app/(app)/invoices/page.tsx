@@ -285,8 +285,14 @@ export default function InvoicingHubPage() {
               Loading invoices...
             </div>
           ) : filteredInvoices.length === 0 ? (
-            <div className="p-12 text-center text-xs text-[var(--muted-foreground)]">
-              No invoices found. Click "New Invoice" to create one with a live pay link.
+            <div className="p-12 text-center text-xs text-[var(--muted-foreground)] flex flex-col items-center justify-center space-y-3">
+              <img
+                src="/assets/illustrations/invoice-illustration.png"
+                alt="No invoices"
+                className="w-36 h-36 object-contain drop-shadow-sm opacity-80"
+              />
+              <p className="font-semibold text-foreground text-sm">No invoices found</p>
+              <p className="max-w-xs">Create your first invoice to generate an instant hosted checkout portal with auto-tax withholding.</p>
             </div>
           ) : (
             filteredInvoices.map((inv) => {
@@ -372,10 +378,19 @@ export default function InvoicingHubPage() {
       <Dialog open={createModalOpen} onOpenChange={setCreateModalOpen}>
         <DialogContent className="max-w-2xl bg-[var(--card)] border border-[var(--border)]">
           <DialogHeader className="text-left">
-            <DialogTitle className="text-xl font-bold text-[var(--foreground)]">Create New Invoice</DialogTitle>
-            <DialogDescription className="text-xs text-[var(--muted-foreground)]">
-              Generates a hosted payment link at <span className="font-mono">/pay/[token]</span> with auto-tax withholding upon receipt.
-            </DialogDescription>
+            <div className="flex items-center gap-3">
+              <img
+                src="/assets/3d-icons/3d-receipt-icon.png"
+                alt="Invoice"
+                className="w-10 h-10 object-contain drop-shadow"
+              />
+              <div>
+                <DialogTitle className="text-xl font-bold text-[var(--foreground)]">Create New Invoice</DialogTitle>
+                <DialogDescription className="text-xs text-[var(--muted-foreground)]">
+                  Generates a hosted payment link at <span className="font-mono">/pay/[token]</span> with auto-tax withholding upon receipt.
+                </DialogDescription>
+              </div>
+            </div>
           </DialogHeader>
 
           <div className="space-y-4 py-2 text-xs">

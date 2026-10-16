@@ -93,6 +93,9 @@ export function HeroTaxSplitSimulator() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
         {/* Account 1: Safe-to-Spend Operating Checking */}
         <div className="rounded-2xl border border-border/80 bg-secondary/40 p-5 space-y-3 relative overflow-hidden">
+          <div className="absolute right-3 top-3 opacity-30 dark:opacity-15 pointer-events-none">
+            <img src="/assets/3d-icons/3d-wallet-icon.png" alt="Wallet" className="w-16 h-16 object-contain" />
+          </div>
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Operating Checking (Safe to Spend)
@@ -123,6 +126,9 @@ export function HeroTaxSplitSimulator() {
 
         {/* Account 2: The Hero Tax Vault */}
         <div className="rounded-2xl border border-amber-500/30 bg-radial from-amber-500/10 via-transparent to-transparent p-5 space-y-3 relative overflow-hidden">
+          <div className="absolute right-3 top-3 opacity-30 dark:opacity-20 pointer-events-none">
+            <img src="/assets/3d-safe-vault-icon-with-money-illustration-png.webp" alt="Vault" className="w-16 h-16 object-contain" />
+          </div>
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-400 flex items-center gap-1.5">
               <Lock className="h-3.5 w-3.5 text-amber-500" />
