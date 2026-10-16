@@ -1,0 +1,13 @@
+<svg viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          @keyframes shieldPulse {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px #10B981); }
+            50% { transform: scale(1.06); filter: drop-shadow(0 0 14px #10B981); }
+          }
+          .pulse { transform-origin: 100px 100px; animation: shieldPulse 2s ease-in-out infinite; }
+        </style>
+        <g class="pulse">
+          <path d="M 100 35 L 145 55 C 145 110 100 155 100 155 C 100 155 55 110 55 55 Z" fill="#0F172A" stroke="#10B981" stroke-width="4" />
+          <path d="M 85 95 L 95 105 L 118 80" fill="none" stroke="#10B981" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+        </g>
+      </svg>

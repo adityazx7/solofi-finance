@@ -1,0 +1,14 @@
+<svg viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          @keyframes fall1 { 0% { transform: translateY(-20px) rotate(0deg); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(180px) rotate(360deg); opacity: 0; } }
+          .c1 { animation: fall1 2s linear infinite; }
+          .c2 { animation: fall1 2.3s linear 0.4s infinite; }
+          .c3 { animation: fall1 1.8s linear 0.8s infinite; }
+        </style>
+        <rect class="c1" x="40" y="10" width="8" height="14" rx="2" fill="#10B981" />
+        <circle class="c2" cx="80" cy="20" r="5" fill="#F59E0B" />
+        <rect class="c3" x="120" y="15" width="10" height="10" rx="2" fill="#3B82F6" />
+        <polygon class="c1" points="160,10 168,24 152,24" fill="#EC4899" />
+        <rect class="c2" x="60" y="5" width="7" height="12" rx="2" fill="#8B5CF6" />
+        <circle class="c3" cx="140" cy="5" r="4" fill="#10B981" />
+      </svg>

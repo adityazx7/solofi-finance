@@ -1,0 +1,51 @@
+<svg viewBox="0 0 1200 630" width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="og-glow" cx="80%" cy="20%" r="60%">
+          <stop offset="0%" stop-color="#10B981" stop-opacity="0.25" />
+          <stop offset="100%" stop-color="#0B0D10" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+      <rect width="1200" height="630" fill="#0B0D10"/>
+      <rect width="1200" height="630" fill="url(#og-glow)"/>
+
+      <!-- Top Badge -->
+      <g transform="translate(100, 100)">
+        <rect width="170" height="38" rx="19" fill="#13171F" stroke="#10B981" stroke-width="1.5"/>
+        <circle cx="24" cy="19" r="6" fill="#10B981"/>
+        <text x="40" y="24" font-family="sans-serif" font-size="12" font-weight="bold" fill="#10B981">SOLOFI FINTECH</text>
+      </g>
+
+      <!-- Headline -->
+      <text x="100" y="220" font-family="system-ui, sans-serif" font-weight="900" font-size="64" fill="#FFFFFF">Never get surprised</text>
+      <text x="100" y="295" font-family="system-ui, sans-serif" font-weight="900" font-size="64" fill="#10B981">by taxes again.</text>
+
+      <!-- Subtitle -->
+      <text x="100" y="370" font-family="system-ui, sans-serif" font-size="24" fill="#94A3B8">The automated financial hub for freelancers & solopreneurs.</text>
+      <text x="100" y="405" font-family="system-ui, sans-serif" font-size="20" fill="#64748B">Smart business checking • Native bookkeeping • Automatic Tax Vault</text>
+
+      <!-- Metric Badges -->
+      <g transform="translate(100, 480)">
+        <rect width="260" height="74" rx="14" fill="#13171F" stroke="#1E293B"/>
+        <text x="24" y="32" font-family="sans-serif" font-size="12" fill="#94A3B8">Estimated Tax Set-Aside</text>
+        <text x="24" y="58" font-family="monospace" font-weight="bold" font-size="22" fill="#F59E0B">28% Auto-Locked</text>
+      </g>
+
+      <g transform="translate(390, 480)">
+        <rect width="260" height="74" rx="14" fill="#13171F" stroke="#1E293B"/>
+        <text x="24" y="32" font-family="sans-serif" font-size="12" fill="#94A3B8">Reconciliation Sync</text>
+        <text x="24" y="58" font-family="monospace" font-weight="bold" font-size="22" fill="#10B981">0 Sec (Zero Sync)</text>
+      </g>
+
+      <!-- Right Side Visual Illustration Card -->
+      <g transform="translate(740, 140)">
+        <rect width="360" height="380" rx="28" fill="#13171F" stroke="#232B38" stroke-width="2"/>
+        <circle cx="180" cy="140" r="64" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="4"/>
+        <text x="180" y="152" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="34" fill="#10B981">72 / 28</text>
+        
+        <text x="180" y="245" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="16" fill="#FFFFFF">Real-Time Income Split</text>
+        <text x="180" y="275" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#94A3B8">Checking: $3,024 • Vault: $1,176</text>
+        
+        <rect x="50" y="310" width="260" height="40" rx="10" fill="#10B981"/>
+        <text x="180" y="335" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="14" fill="#FFFFFF">Protected Safe Harbor</text>
+      </g>
+    </svg>

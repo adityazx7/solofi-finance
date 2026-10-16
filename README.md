@@ -158,6 +158,22 @@ Once the server is running, navigate directly to any of the verified prototype e
   - **`http://localhost:3000/forecast`** — Runway calculator with base, conservative, and optimistic scenario models
   - **`http://localhost:3000/settings`** — Tax withholding rates, business profile, and partner bank configuration
 
+### 6. Design System & Media Asset Library
+SoloFi includes a production asset suite stored in `assets/` and mirrored into `public/assets/` for zero-configuration static serving in Next.js:
+
+| Category | Assets & Formats | Sample Web Path |
+| :--- | :--- | :--- |
+| **Stock Photography** | Freelancer cafe, minimalist home desk, creative studio, tax desk (`.jpg` & `.png`) | `/assets/photos/freelancer-working-laptop-cafe.png` |
+| **Vector Illustrations** | Freelancer, invoice, online payment, savings, secure data, Schedule C tax, growth, 404 (`.svg` & `.png`) | `/assets/illustrations/freelancer-illustration.svg` |
+| **3D Fintech Icons** | 3D wallet, calendar 15th, receipt, bank building, calculator, chart growth, padlock, piggy bank, coin (`.png` & `.svg`) | `/assets/3d-icons/3d-wallet-icon.png` |
+| **UI Iconography** | Shield-check, vault keyhole, receipt, file-invoice, calendar, calculator, trending, bank, card, scan line (`.svg` & `.png`) | `/assets/ui-icons/shield-check.svg` |
+| **Trust & Compliance Badges** | FDIC insured, SOC 2 Type II, PCI DSS, 256-bit encryption, Product Hunt, G2, Trustpilot, App Store, Google Play | `/assets/badges/fdic-member-badge.svg` |
+| **Integration Partner Logos** | Official vector brand logos: Stripe, Notion, Figma, Slack, Adobe, AWS, Uber, Upwork, Fiverr, Shopify (`.svg` & `.png`) | `/assets/logos/stripe.svg` |
+| **Device & Financial Mockups**| MacBook dark, browser frame, iPhone 15, floating angle phone, debit card front/back, invoice PDF, receipt (`.png` & `.svg`) | `/assets/mockups/macbook-mockup-dark.png` |
+| **Lottie & SVG Animations** | Lottie JSON + animated SVGs: payment success checkmark, lock closing, money transfer, confetti, coin drop, pulse shield, skeleton loader | `/assets/animations/payment-success-checkmark.svg` |
+| **Social, Brand & OG** | X, LinkedIn, Instagram, YouTube, favicon set, OpenGraph 1200x630 banner, wave dividers | `/assets/social-and-brand/og-image-1200x630.png` |
+| **Fintech Typography** | Google Fonts typography guide for Geist Sans, Inter, Plus Jakarta Sans, DM Sans, Geist Mono, JetBrains Mono | `assets/fonts/README.md` |
+
 ---
 
 ## 7. Quality Verification & Testing

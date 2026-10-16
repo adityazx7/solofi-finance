@@ -1,0 +1,23 @@
+<svg viewBox="0 0 300 120" width="300" height="120" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+          }
+          .shimmer-band { animation: shimmer 1.5s infinite; }
+        </style>
+        <defs>
+          <linearGradient id="shimmerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#1E293B" stop-opacity="0" />
+            <stop offset="50%" stop-color="#334155" stop-opacity="0.8" />
+            <stop offset="100%" stop-color="#1E293B" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <!-- Skeleton Cards -->
+        <rect x="15" y="20" width="80" height="80" rx="12" fill="#1E293B" />
+        <rect x="110" y="25" width="160" height="18" rx="6" fill="#1E293B" />
+        <rect x="110" y="55" width="110" height="14" rx="5" fill="#1E293B" />
+        <rect x="110" y="80" width="70" height="14" rx="5" fill="#1E293B" />
+        <!-- Overlay Shimmer -->
+        <rect class="shimmer-band" x="0" y="0" width="300" height="120" fill="url(#shimmerGrad)" />
+      </svg>

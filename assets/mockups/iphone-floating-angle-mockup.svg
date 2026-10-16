@@ -1,0 +1,30 @@
+<svg viewBox="0 0 520 700" width="520" height="700" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="flt-shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="-14" dy="34" stdDeviation="30" flood-color="#000000" flood-opacity="0.5" />
+          </filter>
+        </defs>
+        <g filter="url(#flt-shadow)" transform="rotate(-8 260 350)">
+          <!-- Angled Phone Body -->
+          <rect x="110" y="40" width="300" height="620" rx="48" fill="#0B0D10" stroke="#334155" stroke-width="6" />
+          <rect x="122" y="52" width="276" height="596" rx="40" fill="#0F172A" />
+
+          <!-- Dynamic Island -->
+          <rect x="210" y="66" width="100" height="24" rx="12" fill="#000000" />
+
+          <!-- Tax Vault Hero Screen -->
+          <circle cx="260" cy="220" r="70" fill="#10B981" fill-opacity="0.1" stroke="#10B981" stroke-width="4" stroke-dasharray="10 6" />
+          <text x="260" y="210" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#94A3B8">TAX VAULT</text>
+          <text x="260" y="240" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="28" fill="#10B981">$4,820</text>
+          
+          <rect x="146" y="320" width="228" height="40" rx="10" fill="#10B981" />
+          <text x="260" y="345" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="13" fill="#FFFFFF">Safe Harbor Protected (110%)</text>
+
+          <rect x="146" y="380" width="228" height="160" rx="14" fill="#13171F" stroke="#232B38" />
+          <text x="166" y="410" font-family="sans-serif" font-weight="bold" font-size="13" fill="#FFFFFF">Quarterly Vouchers</text>
+          <text x="166" y="435" font-family="sans-serif" font-size="11" fill="#94A3B8">Q1 IRS 1040-ES: $1,205</text>
+          <text x="166" y="458" font-family="sans-serif" font-size="11" fill="#94A3B8">Q2 IRS 1040-ES: $1,205</text>
+          <text x="166" y="481" font-family="sans-serif" font-size="11" fill="#94A3B8">Q3 IRS 1040-ES: $1,205</text>
+          <text x="166" y="504" font-family="sans-serif" font-size="11" fill="#F59E0B">Q4 IRS 1040-ES: Due Jan 15</text>
+        </g>
+      </svg>

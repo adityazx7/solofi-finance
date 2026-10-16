@@ -1,0 +1,21 @@
+<svg viewBox="0 0 800 600" width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="succ-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#10B981" />
+          <stop offset="100%" stop-color="#047857" />
+        </linearGradient>
+      </defs>
+      <rect width="800" height="600" rx="24" fill="#0B132B" />
+
+      <!-- Glowing Rings -->
+      <circle cx="400" cy="270" r="140" fill="#10B981" fill-opacity="0.08" />
+      <circle cx="400" cy="270" r="100" fill="#10B981" fill-opacity="0.15" />
+      <circle cx="400" cy="270" r="70" fill="url(#succ-grad)" />
+
+      <!-- Checkmark -->
+      <path d="M 374 270 L 392 288 L 428 250" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+
+      <!-- Success Text -->
+      <text x="400" y="420" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="bold" font-size="24" fill="#FFFFFF">Action Completed Successfully</text>
+      <text x="400" y="450" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">Double-entry ledger verified • All accounts balanced</text>
+    </svg>

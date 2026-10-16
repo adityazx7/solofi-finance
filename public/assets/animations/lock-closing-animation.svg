@@ -1,0 +1,13 @@
+<svg viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          @keyframes lockShackle {
+            0% { transform: translateY(-16px); }
+            50%, 100% { transform: translateY(0); }
+          }
+          .shackle { animation: lockShackle 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate; }
+        </style>
+        <path class="shackle" d="M 75 90 L 75 60 C 75 46 86 35 100 35 C 114 35 125 46 125 60 L 125 90" fill="none" stroke="#94A3B8" stroke-width="12" stroke-linecap="round" />
+        <rect x="60" y="80" width="80" height="74" rx="16" fill="#F59E0B" />
+        <circle cx="100" cy="112" r="8" fill="#451A03" />
+        <path d="M 97 115 L 103 115 L 105 130 L 95 130 Z" fill="#451A03" />
+      </svg>

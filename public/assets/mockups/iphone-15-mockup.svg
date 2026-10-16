@@ -1,0 +1,63 @@
+<svg viewBox="0 0 420 780" width="420" height="780" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ph-border" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#475569" />
+            <stop offset="50%" stop-color="#1E293B" />
+            <stop offset="100%" stop-color="#0F172A" />
+          </linearGradient>
+          <filter id="ph-shadow" x="-15%" y="-15%" width="130%" height="130%">
+            <feDropShadow dx="0" dy="28" stdDeviation="28" flood-color="#000000" flood-opacity="0.4" />
+          </filter>
+        </defs>
+        <g filter="url(#ph-shadow)">
+          <!-- Outer Phone Chassis -->
+          <rect x="40" y="20" width="340" height="740" rx="54" fill="#0B0D10" stroke="url(#ph-border)" stroke-width="6" />
+
+          <!-- Display Screen -->
+          <rect x="52" y="32" width="316" height="716" rx="46" fill="#0F172A" />
+
+          <!-- Dynamic Island Pill -->
+          <rect x="160" y="46" width="100" height="26" rx="13" fill="#000000" />
+          <circle cx="240" cy="59" r="4.5" fill="#0284C7" /> <!-- Camera lens -->
+
+          <!-- Mobile SoloFi Screen Header -->
+          <text x="76" y="115" font-family="sans-serif" font-size="11" fill="#94A3B8">VANCE STUDIO DESIGN</text>
+          <text x="76" y="140" font-family="system-ui, sans-serif" font-weight="900" font-size="20" fill="#FFFFFF">Financial Hub</text>
+
+          <!-- Safe-to-Spend Big Card -->
+          <rect x="68" y="160" width="284" height="150" rx="18" fill="#13171F" stroke="#10B981" stroke-width="1.5" />
+          <text x="88" y="195" font-family="sans-serif" font-size="12" fill="#94A3B8">Safe-to-Spend Balance</text>
+          <text x="88" y="240" font-family="monospace" font-weight="bold" font-size="34" fill="#10B981">$10,030</text>
+          <text x="88" y="280" font-family="sans-serif" font-size="11" fill="#64748B">🛡️ Tax Vault Locked: $4,820</text>
+
+          <!-- Quick Action Buttons -->
+          <rect x="68" y="326" width="86" height="44" rx="12" fill="#1E293B" />
+          <text x="111" y="352" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF">Send $</text>
+
+          <rect x="167" y="326" width="86" height="44" rx="12" fill="#10B981" />
+          <text x="210" y="352" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF">+ Invoice</text>
+
+          <rect x="266" y="326" width="86" height="44" rx="12" fill="#1E293B" />
+          <text x="309" y="352" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF">Cards</text>
+
+          <!-- Recent Transactions -->
+          <text x="76" y="410" font-family="sans-serif" font-weight="bold" font-size="13" fill="#FFFFFF">Recent Activity</text>
+
+          <rect x="68" y="426" width="284" height="60" rx="12" fill="#13171F" />
+          <circle cx="94" cy="456" r="14" fill="#10B981" fill-opacity="0.15" />
+          <text x="94" y="460" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="12" fill="#10B981">↓</text>
+          <text x="120" y="450" font-family="sans-serif" font-weight="bold" font-size="12" fill="#FFFFFF">Linear Labs Inc</text>
+          <text x="120" y="466" font-family="sans-serif" font-size="10" fill="#64748B">Invoice Paid • 28% Auto-Vaulted</text>
+          <text x="332" y="456" text-anchor="end" font-family="monospace" font-weight="bold" font-size="12" fill="#10B981">+$5,800</text>
+
+          <rect x="68" y="496" width="284" height="60" rx="12" fill="#13171F" />
+          <circle cx="94" cy="526" r="14" fill="#64748B" fill-opacity="0.15" />
+          <text x="94" y="530" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="12" fill="#94A3B8">↑</text>
+          <text x="120" y="520" font-family="sans-serif" font-weight="bold" font-size="12" fill="#FFFFFF">Corner Mart #402</text>
+          <text x="120" y="536" font-family="sans-serif" font-size="10" fill="#64748B">Personal / Non-Deductible</text>
+          <text x="332" y="526" text-anchor="end" font-family="monospace" font-weight="bold" font-size="12" fill="#94A3B8">-$42.50</text>
+
+          <!-- Bottom Home Indicator -->
+          <rect x="145" y="730" width="130" height="4" rx="2" fill="#FFFFFF" fill-opacity="0.4" />
+        </g>
+      </svg>
